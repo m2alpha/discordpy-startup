@@ -6,8 +6,6 @@ TEXT_CHANNEL = 770643077852299335 # テキストチャットのチャンネルID
 
 client = discord.Client()
 
-text_chat = discord.Object(id=TEXT_CHANNEL)
-
 # こんにちはメッセージ
 
 @client.event
