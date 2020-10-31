@@ -2,7 +2,7 @@ import discord
 import os
 
 TOKEN = os.environ['DISCORD_BOT_TOKEN'] # トークンキー
-TEXT_CHANNEL = 767123336869576728 # テキストチャットのチャンネルID
+TEXT_CHANNEL = 770643077852299335 # テキストチャットのチャンネルID
 
 client = discord.Client()
 
