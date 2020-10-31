@@ -15,7 +15,7 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def ping(ctx):
-    await ctx.send('panda')
+    await ctx.send('ぶぅもぁああああ！ぱんだ～')
 
 async def panda(ctx):
     await ctx.send('TEST')
