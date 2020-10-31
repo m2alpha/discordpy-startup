@@ -12,6 +12,13 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
+@bot.event
+async def on_message(message):
+    if message.content.startswith("こんぱんだ"):
+        if bot.user != message.author:
+            msg = "こんぱんだ " + message.author.name + "さん！"
+            await bot.send_message(message.channel, msg)
+    
 @bot.command()
 async def panda(ctx):
     await ctx.send('ぶぅもぁああああ！ぱんだ～')
