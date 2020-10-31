@@ -18,6 +18,6 @@ async def ping(ctx):
     await ctx.send('panda')
     
 async def panda(ctx):
-    await ctx.send('papho?')
+    await ctx.send('TEST')
 
 bot.run(token)
