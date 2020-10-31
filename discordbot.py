@@ -5,11 +5,10 @@ import traceback
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
-TEXT_CHANNEL = 767123336869576728
+#TEXT_CHANNEL = 767123336869576728
 
 #text_chat = discord.Object(id=TEXT_CHANNEL)
 #bot2 = commands.Bot
-
 #@bot2.event
 #async def on_message(message):
 #    if message.content.startswith("こんぱんだ"):
