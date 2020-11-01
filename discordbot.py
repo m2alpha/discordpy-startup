@@ -1,18 +1,21 @@
-import discord
+from discord.ext import commands
 import os
+import traceback
 
-TOKEN = os.environ['DISCORD_BOT_TOKEN'] # トークンキー
-TEXT_CHANNEL = 770643077852299335 # テキストチャットのチャンネルID
+bot = commands.Bot(command_prefix='/')
+token = os.environ['DISCORD_BOT_TOKEN']
 
-client = discord.Client()
 
-# こんにちはメッセージ
+@bot.event
+async def on_command_error(ctx, error):
+    orig_error = getattr(error, "original", error)
+    error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
+    await ctx.send(error_msg)
 
-@client.event
-async def on_message(message):
-    if message.content.startswith("こんにちは"):
-        if client.user != message.author:
-            msg = "こんにちは " + message.author.name + "さん！"
-            await client.send_message(message.channel, msg)
 
-client.run(TOKEN)
+@bot.command()
+async def ping(ctx):
+    await ctx.send('pong')
+
+
+bot.run(token)
